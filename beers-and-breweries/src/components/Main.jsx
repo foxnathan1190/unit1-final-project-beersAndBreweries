@@ -18,10 +18,13 @@ const Main = () => {
                     <li>
                         <Link to="/savedList">Saved List</Link>
                     </li>
+                    <li>
+                        <Link to="/loginPage">Log Out</Link>
+                    </li>
                 </ul>
             </nav>
             <Outlet />
-            <footer>&copy;  2025 Copyright drinklocal.com</footer>
+            <footer>&copy;  2025 Copyright | drinklocal.com</footer>
         </>
     );
 }
