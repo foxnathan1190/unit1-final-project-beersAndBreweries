@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Outlet, Link } from "react-router";
+import NavigationMenu from "../common/NavigationMenu";
 
 const Search = () => {
     const [data, setData] = useState([]);
+    const [search, setSearch] = useState("");
 
     const breweryData = async () => {
         try {
@@ -18,42 +19,24 @@ const Search = () => {
         breweryData()
     }, [])
 
-    /*const handleSearchClick = () => {
-        return(
-            
-        )
-    }*/
+    const handleChange = (e) => {
+        setSearch(e.target.value)
+    }
+
+    let filteredData = [];
+    if(search !== "") {
+        filteredData = data.filter(item => item.city.toLowerCase().includes(search.toLocaleLowerCase()))
+    } else {
+        filteredData = data;
+    }
 
     return (
         <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/search">Search</Link>
-                    </li>
-                    <li>
-                        <Link to="/profilePage">Profile</Link>
-                    </li>
-                    <li>
-                        <Link to="/savedList">Saved List</Link>
-                    </li>
-                    <li>
-                        <Link to="/loginPage">Log Out</Link>
-                    </li>
-                </ul>
-            </nav>
-            <Outlet />
+            <NavigationMenu />
             <h1>Search</h1>
             <form>
-                <lable htmlFor="searchBar">Search Breweries by City: </lable>
-                <input type="text" id="searchBar" name="searchBar" placeholder="--City--"></input>
-                <button type="button" /*onClick={handleSearchClick}*/ >See Breweries</button>
+                <label htmlFor="search">Search Breweries by City: </label>
+                <input type="text" id="search" name="search" onChange={handleChange} placeholder="--City--"></input>
                 <ul>
                     {data.map((data) => (
                         <li key={data.id}>{data.name} | {data.city}, {data.state} <button type="button">Save</button></li>

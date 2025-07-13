@@ -8,17 +8,17 @@ const AgeVerification = () => {
                 <h1>Must be 21 to enter site. Please enter birthday to continue.</h1>
                 <form>
                     <label htmlFor="month">Month:</label>
-                    <br></br>
+                    <br/>
                     <input type="text" id="month" name="month"></input>
-                    <br></br>
+                    <br/>
                     <label htmlFor="day">Day:</label>
-                    <br></br>
+                    <br/>
                     <input type="text" id="day" name="day"></input>
-                    <br></br>
+                    <br/>
                     <label htmlFor="year">Year:</label>
-                    <br></br>
+                    <br/>
                     <input type="text" id="year" name="year"></input>
-                    <br></br>
+                    <br/>
                     <input type="submit" id="ageVerButton"></input>
                 </form>
             </div>

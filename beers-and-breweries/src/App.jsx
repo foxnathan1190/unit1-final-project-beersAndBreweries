@@ -8,16 +8,16 @@ import ProfilePage from './components/ProfilePage';
 import SavedList from './components/SavedList';
 import Search from './components/Search';
 import Main from './components/Main';
- 
+
 function App() {
 
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/main" element={<Main />} />
           <Route path="/ageVerification" element={<AgeVerification />} />
-          <Route path="/loginPage" element={<LoginPage />} />
           <Route path="/createProfile" element={<CreateProfile />} />
           <Route path="/about" element={<About />} />
           <Route path="/profilePage" element={<ProfilePage />} />

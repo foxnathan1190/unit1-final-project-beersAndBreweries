@@ -1,31 +1,9 @@
-import { Outlet, Link } from "react-router";
+import NavigationMenu from "../common/NavigationMenu";
 
 const ProfilePage = () => {
     return (
         <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/search">Search</Link>
-                    </li>
-                    <li>
-                        <Link to="/profilePage">Profile</Link>
-                    </li>
-                    <li>
-                        <Link to="/savedList">Saved List</Link>
-                    </li>
-                    <li>
-                        <Link to="/loginPage">Log Out</Link>
-                    </li>
-                </ul>
-            </nav>
-            <Outlet />
+            <NavigationMenu />
             <h1>Profile</h1>
             <footer>&copy;  2025 Copyright | drinklocal.com</footer>
         </div>
