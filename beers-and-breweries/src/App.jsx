@@ -10,12 +10,12 @@ import Search from './components/Search';
 import Main from './components/Main';
 
 function App() {
-
+const loggedIn = true
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/" element={loggedIn ? <LoginPage /> : <CreateProfile />  } />
           <Route path="/main" element={<Main />} />
           <Route path="/ageVerification" element={<AgeVerification />} />
           <Route path="/createProfile" element={<CreateProfile />} />

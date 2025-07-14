@@ -21,7 +21,7 @@ const NavigationMenu = () => {
                         <Link to="/savedList">Saved List</Link>
                     </li>
                     <li>
-                        <Link to="/loginPage">Log Out</Link>
+                        <Link to="/">Log Out</Link>
                     </li>
                 </ul>
             </nav>
