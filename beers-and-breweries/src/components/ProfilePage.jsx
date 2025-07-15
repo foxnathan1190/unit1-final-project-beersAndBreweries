@@ -5,7 +5,7 @@ const ProfilePage = () => {
         <div>
             <NavigationMenu />
             <h1>Profile</h1>
-            <footer>&copy;  2025 Copyright | drinklocal.com</footer>
+            <footer className="footer">&copy;  2025 Copyright | drinklocal.com</footer>
         </div>
     );
 }

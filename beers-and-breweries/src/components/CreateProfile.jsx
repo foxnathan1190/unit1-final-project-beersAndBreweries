@@ -40,9 +40,10 @@ const CreateProfile = () => {
                     <label htmlFor="year">Year:</label>
                     <br />
                     <input type="text" id="year" name="year"></input>
-                </section><br/>
+                </section><br />
                 <button onClick={handleClick} type="submit">Submit</button>
             </form>
+            <footer className="footer">&copy;  2025 Copyright | drinklocal.com</footer>
         </div>
     );
 }

@@ -15,18 +15,17 @@ const LoginPage = () => {
     }
 
     return (
-        <div>
-            <h1>Drink Local &#127866;</h1>
-            <h3>Login</h3>
-            <form>
+        <div className="loginPage">
+            <h1 id="loginTitle">Drink Local &#127866;</h1>
+            <form id="loginForm">
                 <label htmlFor="username">Username: </label><br />
-                <input type="text" id="username" name="username"></input><br />
+                <input type="text" id="username" name="username"></input><br /><br />
                 <label htmlFor="password">Password: </label><br />
-                <input type="password" id="password" name="password"></input><br />
-                <button type="submit" onClick={handleClickLogin}>Login</button>
-                <button type="submit" onClick={handleClickSignUp}>Sign Up</button>
+                <input type="password" id="password" name="password"></input><br /><br />
+                <button type="submit" className="loginButton" onClick={handleClickLogin}>Login</button>
+                <button type="submit" className="loginButton" id="signUpButton" onClick={handleClickSignUp}>Sign Up</button>
             </form><br />
-            <footer>&copy;  2025 Copyright | drinklocal.com</footer>
+            <footer className="footer">&copy;  2025 Copyright | drinklocal.com</footer>
         </div>
     );
 }

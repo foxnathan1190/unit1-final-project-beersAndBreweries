@@ -8,7 +8,7 @@ const Main = () => {
             <p>
 
             </p>
-            <footer>&copy;  2025 Copyright | drinklocal.com</footer>
+            <footer className="footer">&copy;  2025 Copyright | drinklocal.com</footer>
         </>
     );
 }

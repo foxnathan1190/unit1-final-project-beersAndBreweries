@@ -5,7 +5,7 @@ const SavedList = () => {
         <div>
             <NavigationMenu />
             <h1>Your Saved Breweries</h1>
-            <footer>&copy;  2025 Copyright | drinklocal.com</footer>
+            <footer className="footer">&copy;  2025 Copyright | drinklocal.com</footer>
         </div>
     );
 }

@@ -9,7 +9,7 @@ const About = () => {
             <p>
                 We here at Drink Local have always wanted to be able to travel and drink local.
             </p>
-            <footer>&copy;  2025 Copyright | drinklocal.com</footer>
+            <footer className="footer">&copy;  2025 Copyright | drinklocal.com</footer>
         </div>
     );
 }
