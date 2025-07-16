@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import NavigationMenu from "../common/NavigationMenu";
+import Footer from "../common/Footer";
+import Header from "../common/Header";
 
 const Search = () => {
     const [data, setData] = useState([]);
@@ -32,6 +34,7 @@ const Search = () => {
 
     return (
         <div>
+            <Header />
             <NavigationMenu />
             <h1>Search</h1>
             <form>
@@ -43,7 +46,7 @@ const Search = () => {
                     ))}
                 </ul>
             </form>
-            <footer className="footer">&copy;  2025 Copyright | drinklocal.com</footer>
+            <Footer />
         </div>
     );
 }

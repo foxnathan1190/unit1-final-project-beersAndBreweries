@@ -1,6 +1,5 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from "react-router";
-import AgeVerification from './components/AgeVerificationModal'
 import LoginPage from './components/LoginPage';
 import CreateProfile from './components/CreateProfile';
 import About from './components/About';
@@ -17,7 +16,6 @@ const loggedIn = true
         <Routes>
           <Route path="/" element={loggedIn ? <LoginPage /> : <CreateProfile />  } />
           <Route path="/main" element={<Main />} />
-          <Route path="/ageVerification" element={<AgeVerification />} />
           <Route path="/createProfile" element={<CreateProfile />} />
           <Route path="/about" element={<About />} />
           <Route path="/profilePage" element={<ProfilePage />} />

@@ -1,14 +1,16 @@
+import Footer from "../common/Footer";
+import Header from "../common/Header";
 import NavigationMenu from "../common/NavigationMenu";
 
 const Main = () => {
     return (
         <>
-            <h1>Welcome to Drink Local! &#127866;</h1>
+            <Header />
             <NavigationMenu />
             <p>
 
             </p>
-            <footer className="footer">&copy;  2025 Copyright | drinklocal.com</footer>
+            <Footer />
         </>
     );
 }

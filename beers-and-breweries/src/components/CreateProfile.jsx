@@ -1,4 +1,6 @@
 import { Link } from "react-router"
+import Footer from "../common/Footer";
+import Header from "../common/Header";
 
 function handleClick(e) {
     e.preventDefault();
@@ -11,7 +13,8 @@ const CreateProfile = () => {
 
     return (
         <div>
-            <h1>Create Profile</h1>
+            <Header />
+            <h2>Create Profile</h2>
             <form>
                 <label htmlFor="fName">First Name:</label><br />
                 <input type="text" id="fName" name="fName"></input><br />
@@ -43,7 +46,7 @@ const CreateProfile = () => {
                 </section><br />
                 <button onClick={handleClick} type="submit">Submit</button>
             </form>
-            <footer className="footer">&copy;  2025 Copyright | drinklocal.com</footer>
+            <Footer />
         </div>
     );
 }

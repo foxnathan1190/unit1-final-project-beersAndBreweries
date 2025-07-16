@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import Footer from "../common/Footer";
 
 const LoginPage = () => {
 
@@ -25,7 +26,7 @@ const LoginPage = () => {
                 <button type="submit" className="loginButton" onClick={handleClickLogin}>Login</button>
                 <button type="submit" className="loginButton" id="signUpButton" onClick={handleClickSignUp}>Sign Up</button>
             </form><br />
-            <footer className="footer">&copy;  2025 Copyright | drinklocal.com</footer>
+            <Footer />
         </div>
     );
 }
