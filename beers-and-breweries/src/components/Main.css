@@ -1,0 +1,30 @@
+h1 {
+    font-size: xx-large;
+}
+
+#welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 100px;
+    font-size: x-large;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    padding: 30px;
+}
+
+img {
+    width: 500px;
+    height: 400px;
+    border: 1px solid black;
+    margin: 2px 5px;
+}
+
+.hover-over-image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.hover-over-image:hover {
+    transform: scale(1.1);
+}

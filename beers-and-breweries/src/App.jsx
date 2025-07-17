@@ -9,12 +9,11 @@ import Search from './components/Search';
 import Main from './components/Main';
 
 function App() {
-const loggedIn = true
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={loggedIn ? <LoginPage /> : <CreateProfile />  } />
+          <Route path="/" element={<LoginPage />} />
           <Route path="/main" element={<Main />} />
           <Route path="/createProfile" element={<CreateProfile />} />
           <Route path="/about" element={<About />} />

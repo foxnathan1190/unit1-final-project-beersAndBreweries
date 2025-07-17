@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import Footer from "../common/Footer";
+import "./LoginPage.css";
 
 const LoginPage = () => {
 

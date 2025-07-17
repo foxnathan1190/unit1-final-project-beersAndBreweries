@@ -1,0 +1,33 @@
+body {
+    background-image: linear-gradient(to right, forestgreen, skyblue);
+}
+
+.loginPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 500px 100px;
+    background-color: whitesmoke;
+    border: 5px solid black;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+#loginTitle {
+    text-decoration: underline;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#loginForm {
+    padding: 50px;
+    padding-top: 25px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.loginButton {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#signUpButton {
+    float: right;
+}
