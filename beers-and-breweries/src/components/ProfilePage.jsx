@@ -1,6 +1,7 @@
 import Footer from "../common/Footer";
 import Header from "../common/Header";
 import NavigationMenu from "../common/NavigationMenu";
+import "./ProfilePage.css";
 
 const ProfilePage = () => {
     return (
@@ -8,6 +9,9 @@ const ProfilePage = () => {
             <Header />
             <NavigationMenu />
             <h1>Profile</h1>
+            <div className="layout">
+
+            </div>
             <Footer />
         </div>
     );

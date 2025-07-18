@@ -1,7 +1,3 @@
-body {
-    background-image: linear-gradient(to right, forestgreen, skyblue);
-}
-
 .loginPage {
     display: flex;
     flex-direction: column;

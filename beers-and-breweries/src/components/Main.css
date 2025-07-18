@@ -1,10 +1,11 @@
-h1 {
+#mainHeader {
     font-size: xx-large;
 }
 
-#welcome {
+.layout {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: 50px 100px;

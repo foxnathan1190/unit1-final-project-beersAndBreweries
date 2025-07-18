@@ -1,0 +1,14 @@
+.createProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 500px 100px;
+    background-color: whitesmoke;
+    border: 5px solid black;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+#createProfileButton {
+    margin: 0px 0px 10px;
+}
