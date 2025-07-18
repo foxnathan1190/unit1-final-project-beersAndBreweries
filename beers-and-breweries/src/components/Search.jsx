@@ -12,7 +12,7 @@ const Search = () => {
     const fetchData = async (value) => {
         setLoading(true);
         try {
-            const response = await fetch('https://api.openbrewerydb.org/v1/breweries?by_country=united%20states&per_page=200')
+            const response = await fetch('https://api.openbrewerydb.org/v1/breweries?by_state=colorado&per_page=200', )
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -20,7 +20,6 @@ const Search = () => {
             const results = data.filter((brewery) => {
                 return value && brewery && (brewery.city && brewery.city.toLowerCase().includes(value.toLowerCase())) || (brewery.name && brewery.name.toLowerCase().includes(value.toLowerCase()));
             })
-            console.log(results);
             setResults(results);
         } catch (error) {
             console.error("Error while fetching:", error);

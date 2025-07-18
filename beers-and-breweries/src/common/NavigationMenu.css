@@ -21,3 +21,7 @@
 .navLink a:hover {
   background-color: #111;
 }
+
+.userLoggedIn {
+  color: white;
+}

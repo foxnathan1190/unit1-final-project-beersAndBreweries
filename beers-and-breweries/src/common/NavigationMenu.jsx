@@ -1,7 +1,19 @@
 import { Link } from "react-router";
+import { useState, useEffect } from "react";
+
 import "./NavigationMenu.css";
 
 const NavigationMenu = () => {
+
+    const [profile, setProfile] = useState(null);
+
+    useEffect(() => {
+        const storedProfile = localStorage.getItem('userProfile');
+        if (storedProfile) {
+            setProfile(JSON.parse(storedProfile));
+        }
+    }, []);
+
     return (
         <ul id="nav">
             <li className="navLink">
@@ -22,8 +34,14 @@ const NavigationMenu = () => {
             <li className="navLink" style={{ float: "right" }}>
                 <Link to="/">Log Out</Link>
             </li>
+            <li className="userLoggedIn" style={{ float: "right" }}>
+                {profile ? (
+                    <p>Logged In: {profile.userName}</p>
+                ) : (
+                    <p>No profile data found.</p>
+                )}
+            </li>
         </ul>
     );
 }
-
 export default NavigationMenu;
