@@ -36,7 +36,7 @@ const NavigationMenu = () => {
             </li>
             <li className="userLoggedIn" style={{ float: "right" }}>
                 {profile ? (
-                    <p>Logged In: {profile.userName}</p>
+                    <p>User: {profile.username}</p>
                 ) : (
                     <p>No profile data found.</p>
                 )}

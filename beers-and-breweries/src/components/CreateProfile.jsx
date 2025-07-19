@@ -7,10 +7,9 @@ import "./CreateProfile.css";
 const CreateProfile = () => {
     const [fName, setFName] = useState("");
     const [lName, setLName] = useState("");
-    const [userName, setUserName] = useState("");
+    const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
     const [favBrewery, setFavBrewery] = useState("");
     const [month, setMonth] = useState("");
     const [day, setDay] = useState("");
@@ -20,13 +19,14 @@ const CreateProfile = () => {
 
     function handleClick(e) {
         e.preventDefault();
-        navigate("/main")
+        alert("Profile Created")
+        navigate("/main") 
     }
 
     useEffect(() => {
-        const profileData = { fName, lName, userName, email, password, confirmPassword, favBrewery, month, day, year };
+        const profileData = { fName, lName, username, email, password, favBrewery, month, day, year };
         localStorage.setItem('userProfile', JSON.stringify(profileData));
-    }, [fName, lName, userName, email, password, confirmPassword, favBrewery, month, day, year]);
+    }, [fName, lName, username, email, password, favBrewery, month, day, year]);
 
     return (
         <div>
@@ -39,13 +39,11 @@ const CreateProfile = () => {
                     <label htmlFor="lName">Last Name:</label><br />
                     <input type="text" id="lName" name="lName" value={lName} onChange={(e) => setLName(e.target.value)} ></input><br />
                     <label htmlFor="username">Username:</label><br />
-                    <input type="text" id="username" name="username" value={userName} onChange={(e) => setUserName(e.target.value)} ></input><br />
+                    <input type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} ></input><br />
                     <label htmlFor="email">Email:</label><br />
                     <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} ></input><br />
                     <label htmlFor="password">Password:</label><br />
                     <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} ></input><br />
-                    <label htmlFor="confirmPassword">Confirm Password:</label><br />
-                    <input type="password" id="confirmPassword" name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} ></input><br />
                     <label htmlFor="faveBrewery">Favorite Brewery:</label><br />
                     <input type="text" id="favBrewery" name="favBrewery" value={favBrewery} onChange={(e) => setFavBrewery(e.target.value)} ></input><br />
                     <h4>Must be 21+ | Age Verification</h4>

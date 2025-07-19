@@ -9,6 +9,12 @@
     box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
 }
 
+/*@media screen {
+    .loginPage{
+        margin: auto;
+    }
+}*/
+
 #loginTitle {
     text-decoration: underline;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
@@ -20,7 +26,7 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-.loginButton {
+.loginPageButton {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 

@@ -1,32 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NavigationMenu from "../common/NavigationMenu";
 import Footer from "../common/Footer";
 import Header from "../common/Header";
 import "./Search.css";
 
-const Search = () => {
-    const [results, setResults] = useState([]);
+const Search = ({ results, fetchData }) => {
+
     const [searchInput, setSearchInput] = useState("");
     const [loading, setLoading] = useState(false);
 
-    const fetchData = async (value) => {
-        setLoading(true);
-        try {
-            const response = await fetch('https://api.openbrewerydb.org/v1/breweries?by_state=colorado&per_page=200', )
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const data = (await response.json());
-            const results = data.filter((brewery) => {
-                return value && brewery && (brewery.city && brewery.city.toLowerCase().includes(value.toLowerCase())) || (brewery.name && brewery.name.toLowerCase().includes(value.toLowerCase()));
-            })
-            setResults(results);
-        } catch (error) {
-            console.error("Error while fetching:", error);
-        } finally {
+    useEffect(() => {
+        if (results.length > 0) {
             setLoading(false);
         }
-    }
+    }, [results]);
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -46,12 +33,12 @@ const Search = () => {
                     placeholder="Search here"
                     onChange={handleChange}
                     value={searchInput} />
-                {loading && <p>Loading data...</p>}
-                <ul>
-                    {results.map((result) => (
-                        <li key={result.id} className="resultList">{result.name} | {result.city}, {result.state} | <a href={result.website_url} target="_blank">{result.website_url}</a></li>
-                    ))}
-                </ul>
+                {loading ? (<p>Loading data...</p>) :
+                    (<ul>
+                        {searchInput ? results.map((result) => (
+                            <li key={result.id} className="resultList">{result.name} | {result.city}, {result.state} | <a href={result.website_url} target="_blank">{result.website_url}</a></li>
+                        )) : ("")}
+                    </ul>)}
             </section>
             <Footer />
         </div>

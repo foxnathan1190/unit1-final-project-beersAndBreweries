@@ -23,7 +23,7 @@ const ProfilePage = () => {
                     <>
                         <h1>Profile Details</h1>
                         <p>Name: {profile.fName} {profile.lName}</p>
-                        <p>Username: {profile.userName}</p>
+                        <p>Username: {profile.username}</p>
                         <p>Email: {profile.email}</p>
                         <p>Password: {profile.password}</p>
                         <p>Favorite Brewery: {profile.favBrewery}</p>

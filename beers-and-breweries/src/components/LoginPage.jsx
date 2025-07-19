@@ -24,8 +24,8 @@ const LoginPage = () => {
                 <input type="text" id="username" name="username"></input><br /><br />
                 <label htmlFor="password">Password: </label><br />
                 <input type="password" id="password" name="password"></input><br /><br />
-                <button type="submit" className="loginButton" onClick={handleClickLogin}>Login</button>
-                <button type="submit" className="loginButton" id="signUpButton" onClick={handleClickSignUp}>Sign Up</button>
+                <button type="submit" className="loginPageButton" onClick={handleClickLogin}>Login</button>
+                <button type="submit" className="loginPageButton" id="signUpButton" onClick={handleClickSignUp}>Sign Up</button>
             </form><br />
             <Footer />
         </div>
