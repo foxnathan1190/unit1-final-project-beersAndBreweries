@@ -31,6 +31,7 @@ const Search = ({ results, fetchData }) => {
                 <input
                     type="search"
                     placeholder="Search here"
+                    className="searchBar"
                     onChange={handleChange}
                     value={searchInput} />
                 {loading ? (<p>Loading data...</p>) :

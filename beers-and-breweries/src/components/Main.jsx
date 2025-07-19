@@ -13,7 +13,7 @@ const Main = () => {
             <Header />
             <NavigationMenu />
             <div className="layout">
-                <h1 className="funnel-sans-main">Welcome to Drink Local!</h1>
+                <h1 className="mainH1">Welcome to Drink Local!</h1>
                 <p >
                     Drink Local, the site you use to find that local brewery you've been dreaming of. That Brewery with great beer and a great vibe. Use our patented search feature and extensive database of breweries to find the breweries in your hometown or the place to hang out while traveling.<br /><br />Another great use of our search is to look up that brewery for that beer you tried once and you want to go there someday and try it from the source.
                     Whatever your reason for being here, we're glad you are. Take a look around and we hope you keep coming back again and again.

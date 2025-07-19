@@ -1,0 +1,11 @@
+.resultList {
+    list-style-type: none;
+}
+
+.resultList::before {
+    content: "\1F37A";
+}
+
+.searchBar {
+    margin-top: 30px;
+}

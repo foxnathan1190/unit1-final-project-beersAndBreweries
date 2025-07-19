@@ -43,7 +43,7 @@ const CreateProfile = () => {
                     <label htmlFor="email">Email:</label><br />
                     <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required></input><br />
                     <label htmlFor="password">Password:</label><br />
-                    <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required></input><br />
+                    <input type="password" id="password" name="password" placeholder="********" value={password} onChange={(e) => setPassword(e.target.value)} required></input><br />
                     <label htmlFor="faveBrewery">Favorite Brewery:</label><br />
                     <input type="text" id="favBrewery" name="favBrewery" value={favBrewery} onChange={(e) => setFavBrewery(e.target.value)} required></input><br />
                     <h4>Must be 21+ | Age Verification</h4>

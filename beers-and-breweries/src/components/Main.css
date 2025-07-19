@@ -1,9 +1,10 @@
-.funnel-sans-main {
+.mainH1 {
     font-size: xx-large;
     font-family: "Funnel Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
+    text-decoration: underline;
 }
 
 .layout {
