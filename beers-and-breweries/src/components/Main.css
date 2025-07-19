@@ -1,5 +1,9 @@
-#mainHeader {
+.funnel-sans-main {
     font-size: xx-large;
+    font-family: "Funnel Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 
 .layout {
@@ -13,6 +17,10 @@
     background-color: whitesmoke;
     border: 1px solid black;
     padding: 30px;
+    font-family: "Funnel Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
 img {

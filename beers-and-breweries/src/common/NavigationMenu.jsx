@@ -28,9 +28,6 @@ const NavigationMenu = () => {
             <li className="navLink">
                 <Link to="/search">Search</Link>
             </li>
-            <li className="navLink">
-                <Link to="/savedList">Favorites</Link>
-            </li>
             <li className="navLink" style={{ float: "right" }}>
                 <Link to="/">Log Out</Link>
             </li>
