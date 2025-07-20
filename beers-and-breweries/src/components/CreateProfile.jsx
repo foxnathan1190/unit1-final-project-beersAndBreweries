@@ -17,10 +17,42 @@ const CreateProfile = () => {
 
     const navigate = useNavigate();
 
+    const passwordValidation = ({ password }) => {
+        let isValid = false;
+        let error = "";
+
+        while (!isValid) {
+
+            if (password.length < 8) {
+                error = ('Password must be at least 8 characters long.');
+            } else {
+                let hasUppercase = false;
+                let hasNumber = false;
+
+                for (let char of password) {
+                    if (char >= 'A' && char <= 'Z') {
+                        hasUppercase = true;
+                    } else if (char >= '0' && char <= '9') {
+                        hasNumber = true;
+                    }
+                }
+
+                if (!hasUppercase) {
+                    error = ('Password must contain at least one uppercase letter.');
+                } else if (!hasNumber) {
+                    error = ('Password must contain at least one number.');
+                } else {
+                    isValid = true;
+                }
+            }
+        }
+    }
+
     function handleCreateProfile(e) {
         e.preventDefault();
-        alert("Profile Created")
-        navigate("/main") 
+        passwordValidation();
+        alert("Profile Created");
+        navigate("/main");
     }
 
     useEffect(() => {
@@ -43,9 +75,9 @@ const CreateProfile = () => {
                     <label htmlFor="email">Email:</label><br />
                     <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required></input><br />
                     <label htmlFor="password">Password:</label><br />
-                    <input type="password" id="password" name="password" placeholder="********" value={password} onChange={(e) => setPassword(e.target.value)} required></input><br />
+                    <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" value={password} onChange={(e) => setPassword(e.target.value)} required></input><br />
                     <label htmlFor="faveBrewery">Favorite Brewery:</label><br />
-                    <input type="text" id="favBrewery" name="favBrewery" value={favBrewery} onChange={(e) => setFavBrewery(e.target.value)} required></input><br />
+                    <input type="text" id="favBrewery" name="favBrewery" value={favBrewery} onChange={(e) => setFavBrewery(e.target.value)}></input><br />
                     <h4>Must be 21+ | Age Verification</h4>
                     <section>
                         <label htmlFor="month">Month:</label>

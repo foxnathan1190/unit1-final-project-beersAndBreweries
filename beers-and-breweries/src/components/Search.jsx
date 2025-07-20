@@ -38,7 +38,7 @@ const Search = ({ results, fetchData }) => {
                     (<ul>
                         {searchInput ? results.map((result) => (
                             <li key={result.id} className="resultList">{result.name} | {result.city}, {result.state} | <a href={result.website_url} target="_blank">{result.website_url}</a></li>
-                        )) : ("")}
+                        )) : ("---Please Enter Search Query Above---")}
                     </ul>)}
             </section>
             <Footer />
