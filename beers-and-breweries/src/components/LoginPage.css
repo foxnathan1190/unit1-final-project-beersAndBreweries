@@ -7,27 +7,40 @@
     background-color: whitesmoke;
     border: 5px solid black;
     box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
+    font-family: "Funnel Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
-/*@media screen {
+@media only screen and (max-width:600px) {
     .loginPage{
         margin: auto;
     }
-}*/
+}
 
 #loginTitle {
     text-decoration: underline;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #loginForm {
     padding: 50px;
     padding-top: 25px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.loginPageButton {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.button {
+    width: 70px;
+    height: 25px;
+    font-weight: bold;
+    background-color: hsl(120, 61%, 34%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: hsl(120, 61%, 24%);
 }
 
 #signUpButton {

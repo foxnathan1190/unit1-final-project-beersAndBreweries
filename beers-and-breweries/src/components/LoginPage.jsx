@@ -12,8 +12,27 @@ const LoginPage = () => {
 
     function handleClickLogin(e) {
         e.preventDefault();
-        if (username === "nfox1190" && password === "Apollo11") {
-        navigate("/main");
+        let hasUppercase = false;
+        let hasNumber = false;
+
+        for (let char of password) {
+            if (char >= 'A' && char <= 'Z') {
+                hasUppercase = true;
+            } else if (char >= '0' && char <= '9') {
+                hasNumber = true;
+            }
+        }
+        if (password.length < 8) {
+            alert('Password must be at least 8 characters long.');
+        } else if (!hasUppercase) {
+            alert('Password must contain at least one uppercase letter.');
+        } else if (!hasNumber) {
+            alert('Password must contain at least one number.');
+        } else if (username === "Nfox1190" && password === "Apollo11") { //Login user and password for me.
+            alert("Login Successful!")
+            navigate("/main");
+        } else {
+            alert("Username and Password not found, please create profile.")
         }
     }
 
@@ -25,13 +44,13 @@ const LoginPage = () => {
     return (
         <div className="loginPage">
             <h1 id="loginTitle">Drink Local &#127866;</h1>
-            <form id="loginForm">
+            <form id="loginForm" onSubmit={handleClickLogin}>
                 <label htmlFor="username">Username: </label><br />
                 <input type="text" id="username" name="username" value={username} onChange={(e => setUsername(e.target.value))}></input><br /><br />
                 <label htmlFor="password">Password: </label><br />
-                <input type="password" id="password" name="password" value={password} onChange={(e => setPassword(e.target.value))} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></input><br /><br />
-                <button type="submit" className="loginPageButton" onClick={handleClickLogin}>Login</button>
-                <button type="submit" className="loginPageButton" id="signUpButton" onClick={handleClickSignUp}>Sign Up</button>
+                <input type="password" id="password" name="password" value={password} onChange={(e => setPassword(e.target.value))}></input><br /><br />
+                <button type="submit" className="button">Login</button>
+                <button className="button" id="signUpButton" onClick={handleClickSignUp}>Sign Up</button>
             </form><br />
             <Footer />
         </div>

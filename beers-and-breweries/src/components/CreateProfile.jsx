@@ -16,43 +16,33 @@ const CreateProfile = () => {
     const [year, setYear] = useState("");
 
     const navigate = useNavigate();
-
-    const passwordValidation = ({ password }) => {
-        let isValid = false;
-        let error = "";
-
-        while (!isValid) {
-
-            if (password.length < 8) {
-                error = ('Password must be at least 8 characters long.');
-            } else {
-                let hasUppercase = false;
-                let hasNumber = false;
-
-                for (let char of password) {
-                    if (char >= 'A' && char <= 'Z') {
-                        hasUppercase = true;
-                    } else if (char >= '0' && char <= '9') {
-                        hasNumber = true;
-                    }
-                }
-
-                if (!hasUppercase) {
-                    error = ('Password must contain at least one uppercase letter.');
-                } else if (!hasNumber) {
-                    error = ('Password must contain at least one number.');
-                } else {
-                    isValid = true;
-                }
-            }
-        }
-    }
+    const today = new Date();
 
     function handleCreateProfile(e) {
         e.preventDefault();
-        passwordValidation();
-        alert("Profile Created");
-        navigate("/main");
+        let hasUppercase = false;
+        let hasNumber = false;
+
+        for (let char of password) {
+            if (char >= 'A' && char <= 'Z') {
+                hasUppercase = true;
+            } else if (char >= '0' && char <= '9') {
+                hasNumber = true;
+            }
+        }
+        if (year > (today.getFullYear() - 21)) {
+            alert("Must be 21 years of age.")
+        }
+        if (password.length < 8) {
+            alert('Password must be at least 8 characters long.');
+        } else if (!hasUppercase) {
+            alert('Password must contain at least one uppercase letter.');
+        } else if (!hasNumber) {
+            alert('Password must contain at least one number.');
+        } else {
+            alert("Profile Created");
+            navigate("/main");
+        }
     }
 
     useEffect(() => {
@@ -65,7 +55,7 @@ const CreateProfile = () => {
             <Header />
             <section className="createProfile">
                 <h2>Create Profile</h2>
-                <form>
+                <form onSubmit={handleCreateProfile}>
                     <label htmlFor="fName">First Name:</label><br />
                     <input type="text" id="fName" name="fName" value={fName} onChange={(e) => setFName(e.target.value)} required></input><br />
                     <label htmlFor="lName">Last Name:</label><br />
@@ -73,9 +63,9 @@ const CreateProfile = () => {
                     <label htmlFor="username">Username:</label><br />
                     <input type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required></input><br />
                     <label htmlFor="email">Email:</label><br />
-                    <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required></input><br />
-                    <label htmlFor="password">Password:</label><br />
-                    <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" value={password} onChange={(e) => setPassword(e.target.value)} required></input><br />
+                    <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" value={email} onChange={(e) => setEmail(e.target.value)} required></input><br />
+                    <label htmlFor="password">Password: </label><br />
+                    <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required></input><br />
                     <label htmlFor="faveBrewery">Favorite Brewery:</label><br />
                     <input type="text" id="favBrewery" name="favBrewery" value={favBrewery} onChange={(e) => setFavBrewery(e.target.value)}></input><br />
                     <h4>Must be 21+ | Age Verification</h4>
@@ -92,7 +82,7 @@ const CreateProfile = () => {
                         <br />
                         <input type="text" id="year" name="year" placeholder="0000" value={year} onChange={(e) => setYear(e.target.value)} required></input>
                     </section><br />
-                    <button onClick={handleCreateProfile} type="submit" id="createProfileButton">Create Profile</button>
+                    <button type="submit" className="button">Create</button>
                 </form>
             </section>
             <Footer />

@@ -7,12 +7,12 @@ import About from './components/About';
 import ProfilePage from './components/ProfilePage';
 import Search from './components/Search';
 import Main from './components/Main';
-
+ 
 function App() {
 
   const [results, setResults] = useState([]);
 
-   const fetchData = async (value) => {
+   const fetchData = async (value) => {   //Fetching data from openbrewery api
           try {
               const response = await fetch('https://api.openbrewerydb.org/v1/breweries?by_state=colorado&per_page=200',)
               if (!response.ok) {
@@ -30,14 +30,14 @@ function App() {
 
   return (
     <>
-      <Router>
+      <Router> {/* Route set up */}
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/main" element={<Main />} />
           <Route path="/createProfile" element={<CreateProfile />} />
           <Route path="/about" element={<About />} />
-          <Route path="/profilePage" element={<ProfilePage />} />
-          <Route path="/search" element={<Search results={results} fetchData={fetchData}/>} />
+          <Route path="/profilePage" element={<ProfilePage isLoggedIn={false}/>} />
+          <Route path="/search" element={<Search results={results} fetchData={fetchData}/>} /> {/* passing props from App, parent component, to Search, child component */}
         </Routes>
       </Router>
     </>
