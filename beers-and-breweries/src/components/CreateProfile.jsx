@@ -6,7 +6,7 @@ import Button from "../common/Button";
 import "./CreateProfile.css";
 
 const CreateProfile = () => {
-    const [fName, setFName] = useState("");
+    const [fName, setFName] = useState("");  // Need all of these useStates for saving data to local storage.
     const [lName, setLName] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -19,9 +19,9 @@ const CreateProfile = () => {
     const navigate = useNavigate();
     const today = new Date();
 
-    function handleCreateProfile(e) {
+    function handleCreateProfile(e) {    
         e.preventDefault();
-        let hasUppercase = false;
+        let hasUppercase = false;    // Password and birthdat validation.
         let hasNumber = false;
 
         for (let char of password) {
@@ -55,7 +55,7 @@ const CreateProfile = () => {
         }
     }
 
-    useEffect(() => {
+    useEffect(() => {    // This useEffect is how the program saves the users create profile data to render on the profile page.
         const profileData = { fName, lName, username, email, password, favBrewery, month, day, year };
         localStorage.setItem('userProfile', JSON.stringify(profileData));
     }, [fName, lName, username, email, password, favBrewery, month, day, year]);

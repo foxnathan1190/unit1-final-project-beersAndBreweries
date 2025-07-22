@@ -4,7 +4,7 @@ import "./About.css";
 import NavigationMenu from "../common/NavigationMenu";
 import peopleAtBrewery from "../images/peopleAtBrewery.jpg";
 
-const About = ( {isLoggedIn }) => {
+const About = ({isLoggedIn }) => {
 
     return (
         <div >

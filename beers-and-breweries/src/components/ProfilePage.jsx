@@ -26,7 +26,7 @@ const ProfilePage = ({ isLoggedIn }) => {
 
         const [profile, setProfile] = useState(null);
 
-        useEffect(() => {
+        useEffect(() => {    // This pulls the data from local storage for the profil to be built below.
             const storedProfile = localStorage.getItem('userProfile');
             if (storedProfile) {
                 setProfile(JSON.parse(storedProfile));
@@ -38,7 +38,7 @@ const ProfilePage = ({ isLoggedIn }) => {
                 <Header />
                 <NavigationMenu />
                 <div className="layout">
-                    {profile ? (
+                    {profile ? (              // This ternary creates the profile if theres data.
                         <>
                             <h1>Profile Details</h1>
                             <p>Name: {profile.fName} {profile.lName}</p>
