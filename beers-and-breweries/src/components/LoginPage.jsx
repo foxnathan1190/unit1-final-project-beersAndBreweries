@@ -3,7 +3,7 @@ import { useState } from "react";
 import Footer from "../common/Footer";
 import "./LoginPage.css";
 
-const LoginPage = () => {
+const LoginPage = ( {onAction} ) => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -30,6 +30,7 @@ const LoginPage = () => {
             alert('Password must contain at least one number.');
         } else if (username === "Nfox1190" && password === "Apollo11") { //Login user and password for me.
             alert("Login Successful!")
+            onAction(true);
             navigate("/main");
         } else {
             alert("Username and Password not found, please create profile.")
@@ -38,6 +39,7 @@ const LoginPage = () => {
 
     function handleClickSignUp(e) {
         e.preventDefault();
+        onAction(false);
         navigate("/createProfile")
     }
 

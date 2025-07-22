@@ -4,7 +4,7 @@ import Footer from "../common/Footer";
 import Header from "../common/Header";
 import "./Search.css";
 
-const Search = ({ results, fetchData }) => {
+const Search = ({ results, fetchData, isLoggedIn }) => {
 
     const [searchInput, setSearchInput] = useState("");
     const [loading, setLoading] = useState(false);
@@ -24,7 +24,7 @@ const Search = ({ results, fetchData }) => {
     return (
         <div>
             <Header />
-            <NavigationMenu />
+            <NavigationMenu isLoggedIn={isLoggedIn} />
             <section className="layout">
                 <h1>&#128270; Search</h1>
                 <label htmlFor="search">Search Breweries by City or Brewery Name: </label>

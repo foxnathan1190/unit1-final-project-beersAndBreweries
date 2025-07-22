@@ -9,11 +9,11 @@ const ProfilePage = ({ isLoggedIn }) => {
         return (
             <div>
                 <Header />
-                <NavigationMenu />
+                <NavigationMenu isLoggedIn={isLoggedIn} />
                 <div className="layout">
                     <h1>Profile Details</h1>
                     <p>Name: Nathan Fox</p>
-                    <p>Username: nfox1190</p>
+                    <p>Username: Nfox1190</p>
                     <p>Email: foxnathan1190@gmail.com</p>
                     <p>Password: Apollo11</p>
                     <p>Favorite Brewery: Urban Chestnut Brewing</p>
@@ -49,7 +49,7 @@ const ProfilePage = ({ isLoggedIn }) => {
                             <p>Birthday: {profile.month}/{profile.day}/{profile.year}</p>
                         </>
                     ) : (
-                        <p>No profile data found.</p>
+                        <p>No Profile Found</p>
                     )}
                 </div>
                 <Footer />
