@@ -7,7 +7,6 @@ import About from './components/About';
 import ProfilePage from './components/ProfilePage';
 import Search from './components/Search';
 import Main from './components/Main';
-import NavigationMenu from './common/NavigationMenu';
 
 function App() {
 
@@ -30,7 +29,7 @@ function App() {
     }
   }
 
-  const handleLoggedIn = (dataFromLoginPage) => {  {/* Function to handle login to recieve the update from the Login Page so that can be passed on. */}
+  const handleLoggedIn = (dataFromLoginPage) => {  {/* Function to handle login, to recieve the update from the Login Page, so that can be passed on. */}
     setIsLoggedIn(isLoggedIn = dataFromLoginPage);
   } 
 

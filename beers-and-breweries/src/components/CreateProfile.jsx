@@ -33,12 +33,21 @@ const CreateProfile = () => {
         if (year > (today.getFullYear() - 21)) {
             alert("Must be 21 years of age.")
         }
-        if (password.length < 8) {
-            alert('Password must be at least 8 characters long.');
+        else if (year > 2025 || year < 1000 || year.length > 4) {
+            alert("Please enter valid birth year.")
+        }
+        else if (day.length > 2 || day.length < 1 || day > 31 || day < 1) {
+            alert("Please enter valid birth day.")
+        }
+         else if (month.length > 2 || month.length < 1 || month > 12 || month < 1) {
+            alert("Please enter valid birth month.")
+        }
+        else if (password.length < 8) {
+            alert("Password must be at least 8 characters long.");
         } else if (!hasUppercase) {
-            alert('Password must contain at least one uppercase letter.');
+            alert("Password must contain at least one uppercase letter.");
         } else if (!hasNumber) {
-            alert('Password must contain at least one number.');
+            alert("Password must contain at least one number.");
         } else {
             alert("Profile Created");
             navigate("/main");

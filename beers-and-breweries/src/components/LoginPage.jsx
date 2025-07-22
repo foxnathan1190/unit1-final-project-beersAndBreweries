@@ -10,9 +10,9 @@ const LoginPage = ( {onAction} ) => {
 
     const navigate = useNavigate();
 
-    function handleClickLogin(e) {
+    function handleClickLogin(e) {       
         e.preventDefault();
-        let hasUppercase = false;
+        let hasUppercase = false;    // Password Validation
         let hasNumber = false;
 
         for (let char of password) {
@@ -23,12 +23,12 @@ const LoginPage = ( {onAction} ) => {
             }
         }
         if (password.length < 8) {
-            alert('Password must be at least 8 characters long.');
+            alert("Password must be at least 8 characters long.");
         } else if (!hasUppercase) {
-            alert('Password must contain at least one uppercase letter.');
+            alert("Password must contain at least one uppercase letter.");
         } else if (!hasNumber) {
-            alert('Password must contain at least one number.');
-        } else if (username === "Nfox1190" && password === "Apollo11") { //Login user and password for me.
+            alert("Password must contain at least one number.");
+        } else if (username === "Nfox1190" && password === "Apollo11") {   //Login user and password.
             alert("Login Successful!")
             onAction(true);
             navigate("/main");
@@ -37,7 +37,7 @@ const LoginPage = ( {onAction} ) => {
         }
     }
 
-    function handleClickSignUp(e) {
+    function handleClickSignUp(e) {   // Sends user to Creat Profile.
         e.preventDefault();
         onAction(false);
         navigate("/createProfile")
