@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import Footer from "../common/Footer";
+import Button from "../common/Button";
 import "./LoginPage.css";
 
 const LoginPage = ( {onAction} ) => {
@@ -51,8 +52,8 @@ const LoginPage = ( {onAction} ) => {
                 <input type="text" id="username" name="username" value={username} onChange={(e => setUsername(e.target.value))}></input><br /><br />
                 <label htmlFor="password">Password: </label><br />
                 <input type="password" id="password" name="password" value={password} onChange={(e => setPassword(e.target.value))}></input><br /><br />
-                <button type="submit" className="button">Login</button>
-                <button className="button" id="signUpButton" onClick={handleClickSignUp}>Sign Up</button>
+                <Button type="submit" className="button" label="Login" />
+                <Button className="button" id="signUpButton" onClick={handleClickSignUp} label="Sign Up" />
             </form><br />
             <Footer />
         </div>

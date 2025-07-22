@@ -15,4 +15,16 @@
 
 #createProfileButton {
     margin: 0px 0px 10px;
+    width: 100px;
+    height: 25px;
+    font-weight: bold;
+    background-color: hsl(120, 61%, 34%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#createProfileButton:hover {
+    background-color: hsl(120, 61%, 24%);
 }

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import Footer from "../common/Footer";
 import Header from "../common/Header";
+import Button from "../common/Button";
 import "./CreateProfile.css";
 
 const CreateProfile = () => {
@@ -91,7 +92,7 @@ const CreateProfile = () => {
                         <br />
                         <input type="text" id="year" name="year" placeholder="0000" value={year} onChange={(e) => setYear(e.target.value)} required></input>
                     </section><br />
-                    <button type="submit" className="button">Create</button>
+                    <Button type="submit" id="createProfileButton" label="Create Profile" />
                 </form>
             </section>
             <Footer />

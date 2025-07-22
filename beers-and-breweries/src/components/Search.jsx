@@ -28,12 +28,14 @@ const Search = ({ results, fetchData, isLoggedIn }) => {
             <section className="layout">
                 <h1>&#128270; Search</h1>
                 <label htmlFor="search">Search Breweries by City or Brewery Name: </label>
+                <div className="searchBarWrapper">
                 <input
                     type="search"
-                    placeholder="Search here"
+                    placeholder="Type to Search..."
                     className="searchBar"
                     onChange={handleChange}
                     value={searchInput} />
+                    </div>
                 {loading ? (<p>Loading data...</p>) :
                     (<ul>
                         {searchInput ? results.map((result) => (
