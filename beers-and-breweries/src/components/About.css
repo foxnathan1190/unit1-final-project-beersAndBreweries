@@ -20,13 +20,11 @@
     padding: 100px;
 }
 
-img {
-    width: 600px;
-    height: 400px;
-}
-
 @media only screen and (max-width:600px) {
     .aboutPage {
         margin: auto;
+    }
+    #aboutHeader {
+        padding: 30px;
     }
 }

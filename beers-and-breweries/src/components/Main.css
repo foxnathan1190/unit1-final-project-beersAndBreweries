@@ -43,4 +43,9 @@ img {
     .layout {
         margin: auto;
     }
+
+    img {
+        width: 300px;
+        height: 200px;
+    }
 }
