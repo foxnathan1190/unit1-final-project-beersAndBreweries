@@ -19,6 +19,12 @@
     }
 }
 
+@media only screen and (max-width: 900px) and (min-width: 600px) {
+    .loginPage{
+        margin: 50px 200px 50px;
+    }
+}
+
 #loginTitle {
     text-decoration: underline;
 }

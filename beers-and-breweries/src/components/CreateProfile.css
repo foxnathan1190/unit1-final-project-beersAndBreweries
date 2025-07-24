@@ -28,3 +28,15 @@
 #createProfileButton:hover {
     background-color: hsl(120, 61%, 24%);
 }
+
+@media only screen and (max-width:600px) {
+    .createProfile{
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 600px) {
+    .createProfile{
+        margin: 50px 200px 50px;
+    }
+}
