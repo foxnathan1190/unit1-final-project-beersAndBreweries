@@ -6,13 +6,22 @@ import "./ProfilePage.css";
 
 const ProfilePage = ({ isLoggedIn }) => {
 
+    const [profile, setProfile] = useState(null);
+
+    useEffect(() => {    // This pulls the data from local storage for the profil to be built below.
+        const storedProfile = localStorage.getItem('userProfile');
+        if (storedProfile) {
+            setProfile(JSON.parse(storedProfile));
+        }
+    }, []);
+
     if (isLoggedIn) {
         return (
             <div>
                 <Header />
                 <NavigationMenu isLoggedIn={isLoggedIn} />
                 <div className="layout">
-                    <h1>Profile Details</h1>
+                    <h1>Your Profile</h1>
                     <table>
                         <tbody>
                             <tr>
@@ -46,16 +55,6 @@ const ProfilePage = ({ isLoggedIn }) => {
             </div>
         );
     } else {
-
-        const [profile, setProfile] = useState(null);
-
-        useEffect(() => {    // This pulls the data from local storage for the profil to be built below.
-            const storedProfile = localStorage.getItem('userProfile');
-            if (storedProfile) {
-                setProfile(JSON.parse(storedProfile));
-            }
-        }, []);
-
         return (
             <div>
                 <Header />
@@ -63,7 +62,7 @@ const ProfilePage = ({ isLoggedIn }) => {
                 <div className="layout">
                     {profile ? (              // This ternary creates the profile if theres data.
                         <>
-                            <h1>Profile Details</h1>
+                            <h1>Your Profile</h1>
                             <table>
                                 <tbody>
                                     <tr>

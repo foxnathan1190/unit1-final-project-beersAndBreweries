@@ -1,17 +1,26 @@
 import { useNavigate } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "../common/Footer";
 import Button from "../common/Button";
 import "./LoginPage.css";
 
-const LoginPage = ( {onAction} ) => {
+const LoginPage = ({ onAction }) => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const navigate = useNavigate();
 
-    function handleClickLogin(e) {       
+    const [profile, setProfile] = useState(null);
+
+    useEffect(() => {    // This pulls the profile data from local storage and is used to log back in below after a profile is created.
+        const storedProfile = localStorage.getItem('userProfile');
+        if (storedProfile) {
+            setProfile(JSON.parse(storedProfile));
+        }
+    }, []);
+
+    function handleClickLogin(e) {
         e.preventDefault();
         let hasUppercase = false;    // Password Validation
         let hasNumber = false;
@@ -32,6 +41,10 @@ const LoginPage = ( {onAction} ) => {
         } else if (username === "Nfox1190" && password === "Apollo11") {   //Login user and password.
             alert("Login Successful!")
             onAction(true);
+            navigate("/main");
+        } else if (username === profile.username && password === profile.password) {  //Allows you to log in after loggining out with new created profile.
+            alert("Login Successful!")
+            onAction(false);
             navigate("/main");
         } else {
             alert("Username and Password not found, please create profile.")
