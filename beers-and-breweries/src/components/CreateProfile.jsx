@@ -21,7 +21,7 @@ const CreateProfile = () => {
 
     function handleCreateProfile(e) {    
         e.preventDefault();
-        let hasUppercase = false;    // Password and birthdat validation.
+        let hasUppercase = false;    // Password and birthdate validation.
         let hasNumber = false;
 
         for (let char of password) {

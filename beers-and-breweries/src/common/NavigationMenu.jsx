@@ -7,7 +7,7 @@ const NavigationMenu = ({ isLoggedIn }) => {
 
     const [profile, setProfile] = useState(null);
 
-    useEffect(() => {
+    useEffect(() => {  // Pulling in profile data from local storage to display user in nav bar.
         const storedProfile = localStorage.getItem('userProfile');
         if (storedProfile) {
             setProfile(JSON.parse(storedProfile));
@@ -32,7 +32,7 @@ const NavigationMenu = ({ isLoggedIn }) => {
                 <Link to="/">Log Out</Link>
             </li>
             <li className="userLoggedIn" style={{ float: "right" }}>
-                {isLoggedIn ? (<p>User: Nfox1190</p>) : (profile ? (
+                {isLoggedIn ? (<p>User: Nfox1190</p>) : (profile ? (  /* Ternary for profile username display */
                     <p>User: {profile.username}</p>
                 ) : (
                     <p>No profile data found.</p>

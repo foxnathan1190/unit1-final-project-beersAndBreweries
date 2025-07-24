@@ -20,7 +20,7 @@ const LoginPage = ({ onAction }) => {
         }
     }, []);
 
-    function handleClickLogin(e) {
+    function handleClickLogin(e) { //Sends user to Main page.
         e.preventDefault();
         let hasUppercase = false;    // Password Validation
         let hasNumber = false;
@@ -42,7 +42,7 @@ const LoginPage = ({ onAction }) => {
             alert("Login Successful!")
             onAction(true);
             navigate("/main");
-        } else if (username === profile.username && password === profile.password) {  //Allows you to log in after loggining out with new created profile.
+        } else if (username === profile.username && password === profile.password) {  //Allows you to log in after loggining out with your new created profile.
             alert("Login Successful!")
             onAction(false);
             navigate("/main");

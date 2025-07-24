@@ -24,12 +24,13 @@
     .aboutPage {
         margin: auto;
     }
+
     #aboutHeader {
         padding: 30px;
     }
 }
 
-@media only screen and (max-width:900px) and (min-width: 600px){
+@media only screen and (max-width:900px) and (min-width: 600px) {
     #aboutImage {
         width: 500px;
         height: 400px;

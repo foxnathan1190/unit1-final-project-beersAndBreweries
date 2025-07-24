@@ -30,13 +30,13 @@
 }
 
 @media only screen and (max-width:600px) {
-    .createProfile{
+    .createProfile {
         margin: auto;
     }
 }
 
 @media only screen and (max-width: 900px) and (min-width: 600px) {
-    .createProfile{
+    .createProfile {
         margin: 50px 200px 50px;
     }
 }

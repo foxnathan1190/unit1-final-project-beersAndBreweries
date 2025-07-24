@@ -52,14 +52,17 @@ i {
     .searchBarWrapper {
         margin: auto;
     }
+
     .resultListContainer {
         margin: auto;
-        
+
     }
+
     .resultList {
         margin: auto;
         font-size: medium;
     }
+
     .searchBar {
         margin: auto;
     }

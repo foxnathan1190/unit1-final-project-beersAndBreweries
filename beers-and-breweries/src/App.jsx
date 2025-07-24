@@ -11,7 +11,7 @@ import Main from './components/Main';
 function App() {
 
   const [results, setResults] = useState([]);
-  let [isLoggedIn, setIsLoggedIn] = useState(false); {/* Had to be made a let so that it could change on clicks and actions. */}
+  let [isLoggedIn, setIsLoggedIn] = useState(false); {/* Had to be made a let so that it could change on clicks and actions. */ }
 
   const fetchData = async (value) => {   //Fetching data from openbrewery api
     try {
@@ -29,9 +29,9 @@ function App() {
     }
   }
 
-  const handleLoggedIn = (dataFromLoginPage) => {  {/* Function to handle login, to recieve the update from the Login Page, so that can be passed on. */}
+  const handleLoggedIn = (dataFromLoginPage) => {  // Function to handle login, to recieve the update from the Login Page, so that can be passed on.
     setIsLoggedIn(isLoggedIn = dataFromLoginPage);
-  } 
+  }
 
   return (
     <>
@@ -42,7 +42,7 @@ function App() {
           <Route path="/createProfile" element={<CreateProfile />} />
           <Route path="/about" element={<About isLoggedIn={isLoggedIn} />} />
           <Route path="/profilePage" element={<ProfilePage isLoggedIn={isLoggedIn} />} /> {/* Updating logged in status from Login Page to Profile Page. */}
-          <Route path="/search" element={<Search results={results} fetchData={fetchData} isLoggedIn={isLoggedIn}/>} /> {/* Passing props from App, parent component, to Search, child component */}
+          <Route path="/search" element={<Search results={results} fetchData={fetchData} isLoggedIn={isLoggedIn} />} /> {/* Passing props from App, parent component, to Search, child component */}
         </Routes>
       </Router>
     </>
